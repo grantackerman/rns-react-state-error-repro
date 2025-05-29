@@ -25,7 +25,7 @@ Call Stack
 ```
 
 ## Steps to reproduce in Expo Go
-1. Clone react-state-warning-repro repo
+1. Clone this repo
 2. Run `npm install`
 3. Run `npx expo start` to start the development server
 4. Ensure you're in Expo Go. Press s to switch to Expo Go if you're in development build. If you already have an app open in Expo Go, make sure to quit out first.
