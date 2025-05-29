@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# rns-react-state-error-repro
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Error to reproduce:
+```
+ ERROR  Warning: Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously later calls tries to update the component. Move this work to useEffect instead.
 
-## Get started
+  4 |
+  5 | function AppLayoutContents() {
+> 6 |   const { data } = useSuspenseQuery2();
+    |                                     ^
+  7 |   console.log('data', data);
+  8 |
+  9 |   return (
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+Call Stack
+  TabLayout(./(app)/(tabs)/_layout.tsx) (<anonymous>)
+  ScreenContentWrapper (<anonymous>)
+  RNSScreenStack (<anonymous>)
+  AppLayoutContents (app/(app)/_layout.tsx:6:37)
+  AppLayout(./(app)/_layout.tsx) (<anonymous>)
+  RootLayout(./_layout.tsx) (<anonymous>)
+  RNCSafeAreaProvider (<anonymous>)
+  App (<anonymous>)
+  ErrorOverlay (<anonymous>)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Steps to reproduce in Expo Go
+1. Clone react-state-warning-repro repo
+2. Run `npx expo start` to start the development server
+3. Ensure you're in Expo Go. Press s to switch to Expo Go if you're in development build.
+4. Press i to open iOS simulator and reproduce.
+5. Press a to open Android simulator and reproduce.
