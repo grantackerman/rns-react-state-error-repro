@@ -38,4 +38,4 @@ Call Stack
 3. Run `npx expo prebuild`
 4. Run `npx expo run:ios` to reproduce on iOS
 5. Run `npx expo run:android` to reproduce on Android
-    - Ensure you have set your ANDROID_HOME environment variable to the path of your Android SDK, which can be found in Android Studio Settings.
+    - Ensure you have set your ANDROID_HOME environment variable to the path of your Android SDK, which can be found in Android Studio Settings. This will usually be `export ANDROID_HOME=$HOME/Library/Android/sdk`
