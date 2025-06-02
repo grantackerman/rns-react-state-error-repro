@@ -31,3 +31,11 @@ Call Stack
 4. Ensure you're in Expo Go. Press s to switch to Expo Go if you're in development build. If you already have an app open in Expo Go, make sure to quit out first.
 5. Press i to open iOS simulator and reproduce.
 6. Press a to open Android simulator and reproduce.
+
+## Steps to reproduce in a development build
+1. Clone this repo
+2. Run `npm install`
+3. Run `npx expo prebuild`
+4. Run `npx expo run:ios` to reproduce on iOS
+5. Run `npx expo run:android` to reproduce on Android
+    - Ensure you have set your ANDROID_HOME environment variable to the path of your Android SDK, which can be found in Android Studio Settings.
